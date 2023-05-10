@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 # Check if the powerline fonts directory exists
 if [[ ! -d "$HOME/.local/share/fonts/Powerline" ]]; then
