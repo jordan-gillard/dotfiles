@@ -9,6 +9,7 @@ ZSH_THEME="agnoster"
 
 plugins=(
   git
+  copyfile
   docker
   docker-compose
   nodenv
