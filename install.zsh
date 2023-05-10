@@ -6,6 +6,9 @@ if [ "$(basename "$SHELL")" != "zsh" ]; then
   chsh -s $(which zsh)
 fi
 
+echo "Installing Z shell & setting it as default..."
+./install_zsh_and_set_default.sh
+
 echo "Installing Oh My Zsh..."
 ./install_oh_my_zsh.zsh
 
