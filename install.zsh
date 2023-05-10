@@ -6,12 +6,13 @@ if [ "$(basename "$SHELL")" != "zsh" ]; then
   chsh -s $(which zsh)
 fi
 
-# Execute install_oh_my_zsh.zsh
 echo "Installing Oh My Zsh..."
 ./install_oh_my_zsh.zsh
 
-# Execute install_powerline_fonts.zsh
 echo "Installing Powerline fonts..."
 ./install_powerline_fonts.zsh
+
+echo "Installing clang-format..."
+./install_clang_format.zsh
 
 echo "Installation complete. Please restart your terminal for changes to take effect."

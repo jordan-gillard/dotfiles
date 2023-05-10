@@ -7,6 +7,7 @@ This repository contains a collection of dotfiles and scripts to help you set up
 - `install.zsh`: Main installation script that sets the default shell to zsh and executes other installation scripts 🛠️.
 - `install_oh_my_zsh.zsh`: Script to install Oh My Zsh if it's not already installed 🎉.
 - `install_powerline_fonts.zsh`: Script to install Powerline fonts for use with Oh My Zsh themes 🌈.
+- `install_clang_format.zsh` : Script to install clang-format on Linux/Mac machines.
 
 ## Installation 🛠️
 
