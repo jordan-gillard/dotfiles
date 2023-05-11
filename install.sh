@@ -19,4 +19,9 @@ echo "Setting up .zshrc and .vimrc..."
 ln -sf "$SCRIPT_DIR/dotfiles/.zshrc" "$HOME/.zshrc"
 ln -sf "$SCRIPT_DIR/dotfiles/.vimrc" "$HOME/.vimrc"
 
+# Create symbolic link to VSCode settings.json
+echo "Setting up VSCode settings..."
+mkdir -p "$HOME/.config/Code/User"
+ln -sf "$SCRIPT_DIR/dotfiles/.vscode/settings.json" "$HOME/.config/Code/User/settings.json"
+
 echo "Installation complete. Please restart your terminal for changes to take effect."
