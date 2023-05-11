@@ -6,14 +6,14 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux installation
     echo "Detected OS: Linux"
     if command -v apt-get > /dev/null; then
-        sudo apt-get update
-        sudo apt-get install -y clang-format
+        apt-get update
+        apt-get install -y clang-format
     elif command -v yum > /dev/null; then
-        sudo yum install -y clang-format
+        yum install -y clang-format
     elif command -v dnf > /dev/null; then
-        sudo dnf install -y clang-format
+        dnf install -y clang-format
     elif command -v pacman > /dev/null; then
-        sudo pacman -Syu --noconfirm clang-format
+        pacman -Syu --noconfirm clang-format
     else
         echo "Package manager not supported. Please install clang-format manually."
     fi
