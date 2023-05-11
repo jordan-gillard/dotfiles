@@ -1,10 +1,4 @@
-#!/usr/bin/env zsh
-
-# Set default shell to zsh if not already set
-if [ "$(basename "$SHELL")" != "zsh" ]; then
-  echo "Setting default shell to zsh..."
-  chsh -s $(which zsh)
-fi
+#!/usr/bin/env bash
 
 echo "Installing Z shell & setting it as default..."
 ./install_zsh_and_set_default.sh
