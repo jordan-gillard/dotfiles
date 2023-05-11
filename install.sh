@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
 
+# Get the absolute path of the script's directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+
 echo "Installing Z shell & setting it as default..."
-source ./install_zsh_and_set_default.sh
+source "$SCRIPT_DIR/install_zsh_and_set_default.sh"
 
 echo "Installing Oh My Zsh..."
-source ./install_oh_my_zsh.zsh
+source "$SCRIPT_DIR/install_oh_my_zsh.zsh"
 
 echo "Installing Powerline fonts..."
-source ./install_powerline_fonts.zsh
+source "$SCRIPT_DIR/install_powerline_fonts.zsh"
 
 echo "Installing clang-format..."
-source ./install_clang_format.zsh
+source "$SCRIPT_DIR/install_clang_format.zsh"
 
 echo "Installation complete. Please restart your terminal for changes to take effect."
