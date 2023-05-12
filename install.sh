@@ -22,15 +22,15 @@ echo "Setting up .zshrc and .vimrc..."
 ln -sf "$SCRIPT_DIR/dotfiles/.zshrc" "$HOME/.zshrc"
 ln -sf "$SCRIPT_DIR/dotfiles/.vimrc" "$HOME/.vimrc"
 
-echo "Installing Rust and Cargo..."
-source "$SCRIPT_DIR/install_rust_and_cargo.zsh"
-
-echo "Installing Alacritty and setting it as VSCode default terminal"
-source "$SCRIPT_DIR/install_alacritty.zsh"
-
 # Create symbolic link to VSCode settings.json
 echo "Setting up VSCode settings..."
 mkdir -p "$HOME/.config/Code/User"
 ln -sf "$SCRIPT_DIR/dotfiles/.vscode/settings.json" "$HOME/.config/Code/User/settings.json"
+
+# echo "Installing Rust and Cargo..."
+# source "$SCRIPT_DIR/install_rust_and_cargo.zsh"
+
+# echo "Installing Alacritty and setting it as VSCode default terminal"
+# source "$SCRIPT_DIR/install_alacritty.zsh"
 
 echo "Installation complete. Please restart your terminal for changes to take effect."
