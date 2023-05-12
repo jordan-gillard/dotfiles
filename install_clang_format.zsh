@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 echo "Installing clang-format..."
-
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux installation
     echo "Detected OS: Linux"
@@ -26,6 +25,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
             ;;
         *)
             echo "Unsupported Linux distribution. Please install clang-format manually."
+            exit 1
             ;;
     esac
 elif [ "$(uname)" == "Darwin" ]; then
@@ -35,9 +35,11 @@ elif [ "$(uname)" == "Darwin" ]; then
         brew install clang-format
     else
         echo "Homebrew not found. Please install Homebrew or clang-format manually."
+        exit 1
     fi
 else
     echo "Operating system not supported. Please install clang-format manually."
+    exit 1
 fi
 
 echo "clang-format installation script finished."
