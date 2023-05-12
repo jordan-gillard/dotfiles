@@ -9,20 +9,20 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     case $ID in
         ubuntu|debian)
             echo "Detected Ubuntu/Debian-based distribution."
-            sudo apt-get update
-            sudo apt-get install -y clang-format
+            apt-get update
+            apt-get install -y clang-format
             ;;
         centos|rhel)
             echo "Detected CentOS/RHEL-based distribution."
             if [ "${VERSION_ID%%.*}" -ge "8" ]; then
-                sudo dnf -y install clang-format
+                dnf -y install clang-format
             else
-                sudo yum -y install clang-format
+                yum -y install clang-format
             fi
             ;;
         fedora)
             echo "Detected Fedora-based distribution."
-            sudo dnf -y install clang-format
+            dnf -y install clang-format
             ;;
         *)
             echo "Unsupported Linux distribution. Please install clang-format manually."

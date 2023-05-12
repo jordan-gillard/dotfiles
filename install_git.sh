@@ -20,15 +20,15 @@ if [ "$OS" == "macOS" ]; then
     fi
     brew install git
 elif [ "$ID" == "debian" ] || [ "$ID" == "ubuntu" ]; then
-    sudo apt-get update
-    sudo apt-get install -y git
+    apt-get update
+    apt-get install -y git
 elif [ "$ID" == "fedora" ]; then
-    sudo dnf -y install git
+    dnf -y install git
 elif [ "$ID" == "centos" ] || [ "$ID" == "rhel" ]; then
     if [ "${VERSION_ID%%.*}" -ge "8" ]; then
-        sudo dnf -y install git
+        dnf -y install git
     else
-        sudo yum -y install git
+        yum -y install git
     fi
 else
     echo "Unsupported operating system. Please install Git manually."

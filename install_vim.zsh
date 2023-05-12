@@ -16,17 +16,17 @@ if ! command -v vim &> /dev/null; then
         . /etc/os-release
         case $ID in
             debian|ubuntu|*mint*)
-                sudo apt update
-                sudo apt install -y vim
+                apt update
+                apt install -y vim
                 ;;
             fedora|rhel|centos|rocky)
-                sudo dnf install -y vim
+                dnf install -y vim
                 ;;
             opensuse*)
-                sudo zypper install -y vim
+                zypper install -y vim
                 ;;
             arch|manjaro)
-                sudo pacman -Syu vim
+                pacman -Syu vim
                 ;;
             *)
                 echo "Unsupported distribution. Please install Vim manually."

@@ -21,12 +21,12 @@ fi
 case $ID in
   ubuntu|debian)
     echo "Detected Ubuntu/Debian-based distribution."
-    sudo apt-get update
-    sudo apt-get install -y qemu-utils
+    apt-get update
+    apt-get install -y qemu-utils
     ;;
   centos|rhel|fedora)
     echo "Detected CentOS/RHEL/Fedora-based distribution."
-    sudo dnf -y install qemu-img
+    dnf -y install qemu-img
     ;;
   *)
     echo "Unsupported distribution: $ID"

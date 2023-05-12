@@ -10,7 +10,7 @@ echo "Setting Z shell as the default shell"
 source "$SCRIPT_DIR/set_zsh_as_default.sh"
 
 echo "Installing Git..."
-source "./install_git.sh"
+source "$SCRIPT_DIR/install_git.sh"
 
 echo "Installing Oh My Zsh..."
 source "$SCRIPT_DIR/install_oh_my_zsh.zsh"

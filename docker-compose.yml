@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  ubuntu:
+    image: ubuntu:latest
+    command: /bin/bash -c "workdir/install.sh"
+    volumes:
+      - .:/workdir
+
+  debian:
+    image: debian:latest
+    command: /bin/bash -c "workdir/install.sh"
+    volumes:
+      - .:/workdir
+
+  centos:
+    image: centos:latest
+    command: /bin/bash -c "workdir/install.sh"
+    volumes:
+      - .:/workdir
+
+  rhel:
+    image: registry.access.redhat.com/ubi8/ubi:latest
+    command: /bin/bash -c "workdir/install.sh"
+    volumes:
+      - .:/workdir
+
+  fedora:
+    image: fedora:latest
+    command: /bin/bash -c "workdir/install.sh"
+    volumes:
+      - .:/workdir
