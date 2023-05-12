@@ -5,19 +5,30 @@ echo "Installing clang-format..."
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux installation
     echo "Detected OS: Linux"
-    if command -v apt-get > /dev/null; then
-        apt-get update
-        apt-get install -y clang-format
-    elif command -v yum > /dev/null; then
-        yum install -y clang-format
-    elif command -v dnf > /dev/null; then
-        dnf install -y clang-format
-    elif command -v pacman > /dev/null; then
-        pacman -Syu --noconfirm clang-format
-    else
-        echo "Package manager not supported. Please install clang-format manually."
-    fi
-elif [[ "$OSTYPE" == "darwin"* ]]; then
+    . /etc/os-release
+    case $ID in
+        ubuntu|debian)
+            echo "Detected Ubuntu/Debian-based distribution."
+            sudo apt-get update
+            sudo apt-get install -y clang-format
+            ;;
+        centos|rhel)
+            echo "Detected CentOS/RHEL-based distribution."
+            if [ "${VERSION_ID%%.*}" -ge "8" ]; then
+                sudo dnf -y install clang-format
+            else
+                sudo yum -y install clang-format
+            fi
+            ;;
+        fedora)
+            echo "Detected Fedora-based distribution."
+            sudo dnf -y install clang-format
+            ;;
+        *)
+            echo "Unsupported Linux distribution. Please install clang-format manually."
+            ;;
+    esac
+elif [ "$(uname)" == "Darwin" ]; then
     # macOS installation
     echo "Detected OS: macOS"
     if command -v brew > /dev/null; then

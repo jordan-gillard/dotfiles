@@ -32,13 +32,3 @@ else
     echo "Operating system not supported. Please install zsh manually."
     exit 1
 fi
-
-# Set zsh as the default shell
-if command -v chsh > /dev/null; then
-    echo "Setting zsh as the default shell..."
-    chsh -s "$(command -v zsh)"
-    echo "zsh has been set as the default shell. Please restart your terminal."
-else
-    echo "chsh command not found. Please set zsh as the default shell manually."
-    exit 1
-fi

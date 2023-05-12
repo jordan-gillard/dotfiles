@@ -1,11 +1,6 @@
-# Use the CentOS 9-stream base image
-FROM centos-stream-9
+# Use the RHEL UBI 7 base image
+FROM registry.access.redhat.com/ubi9/ubi:latest
 
-# Copy all installation files
 COPY . .
+# RUN ./install.sh
 
-# Run the install script
-RUN ./install.sh
-
-# Set the entrypoint to Zsh
-ENTRYPOINT ["/usr/bin/env zsh"]

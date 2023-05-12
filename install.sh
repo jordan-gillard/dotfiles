@@ -3,8 +3,14 @@
 # Get the absolute path of the script's directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
-echo "Installing Z shell & setting it as default..."
-source "$SCRIPT_DIR/install_zsh_and_set_default.sh"
+echo "Installing Z shell"
+source "$SCRIPT_DIR/install_zsh.sh"
+
+echo "Setting Z shell as the default shell"
+source "$SCRIPT_DIR/set_zsh_as_default.sh"
+
+echo "Installing Git..."
+source "./install_git.sh"
 
 echo "Installing Oh My Zsh..."
 source "$SCRIPT_DIR/install_oh_my_zsh.zsh"
