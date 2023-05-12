@@ -19,6 +19,9 @@ echo "Setting up .zshrc and .vimrc..."
 ln -sf "$SCRIPT_DIR/dotfiles/.zshrc" "$HOME/.zshrc"
 ln -sf "$SCRIPT_DIR/dotfiles/.vimrc" "$HOME/.vimrc"
 
+echo "Installing Alacritty and setting it as VSCode default terminal"
+source "$SCRIPT_DIR/install_alacritty.zsh"
+
 # Create symbolic link to VSCode settings.json
 echo "Setting up VSCode settings..."
 mkdir -p "$HOME/.config/Code/User"

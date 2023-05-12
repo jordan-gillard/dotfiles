@@ -1,3 +1,5 @@
 {
-    "workbench.colorTheme": "DesertDawn"
+    "workbench.colorTheme": "DesertDawn",
+    "terminal.external.linuxExec": "alacritty",
+    "terminal.integrated.defaultProfile.linux": "alacritty"
 }
