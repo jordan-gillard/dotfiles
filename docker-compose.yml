@@ -3,13 +3,13 @@ version: "3.9"
 services:
   ubuntu:
     image: ubuntu:latest
-    command: /bin/bash -c "workdir/install.sh"
+    command: /bin/bash -c "workdir/install.sh & tail -f /dev/null"
     volumes:
       - .:/workdir
 
   debian:
     image: debian:latest
-    command: /bin/bash -c "workdir/install.sh"
+    command: /bin/bash -c "workdir/install.sh & tail -f /dev/null"
     volumes:
       - .:/workdir
 
@@ -21,6 +21,6 @@ services:
 
   fedora:
     image: fedora:latest
-    command: /bin/bash -c "workdir/install.sh"
+    command: /bin/bash -c "workdir/install.sh & tail -f /dev/null"
     volumes:
       - .:/workdir
