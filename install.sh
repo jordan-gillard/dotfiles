@@ -46,16 +46,16 @@ clang_format_result=$?
 set +e
 
 echo "Setting up .zshrc and .vimrc..."
-ln -sf "$SCRIPT_DIR/dotfiles/.zshrc" "$HOME/.zshrc"
+ln -sf "$SCRIPT_DIR/.zshrc" "$HOME/.zshrc"
 zshrc_symbolic_link_result=$?
-ln -sf "$SCRIPT_DIR/dotfiles/.vimrc" "$HOME/.vimrc"
+ln -sf "$SCRIPT_DIR/.vimrc" "$HOME/.vimrc"
 vimrc_symbolic_link_result=$?
 
 # Create symbolic link to VSCode settings.json
 echo "Setting up VSCode settings..."
 mkdir -p "$HOME/.config/Code/User"
-echo "Linking $SCRIPT_DIR/dotfiles/.vscode/settings.json"
-ln -sf "$SCRIPT_DIR/dotfiles/.vscode/settings.json" "$HOME/.config/Code/User/settings.json"
+echo "Linking $SCRIPT_DIR/.vscode/settings.json"
+ln -sf "$SCRIPT_DIR/.vscode/settings.json" "$HOME/.config/Code/User/settings.json"
 vscode_settings_symbolic_link_result=$?
 
 # Re-enable exit-on-error

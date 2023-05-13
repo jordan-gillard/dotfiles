@@ -15,7 +15,7 @@ services:
 
   rhel:
     image: registry.access.redhat.com/ubi8/ubi:latest
-    command: /bin/bash -c "workdir/install.sh"
+    command: /bin/bash -c "workdir/install.sh & tail -f /dev/null"
     volumes:
       - .:/workdir
 
