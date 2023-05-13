@@ -19,7 +19,15 @@ if ! command -v vim &> /dev/null; then
                 apt update
                 apt install -y vim
                 ;;
-            fedora|rhel|centos|rocky)
+            centos|rhel)
+                echo "Detected CentOS/RHEL-based distribution."
+                if [ "${VERSION_ID%%.*}" -ge "8" ]; then
+                    dnf -y install clang-format
+                else
+                    yum -y install clang-format
+                fi
+                ;;
+            fedora|rocky)
                 dnf install -y vim
                 ;;
             opensuse*)
