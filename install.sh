@@ -7,9 +7,9 @@ bash "$SCRIPT_DIR/print_title.sh"
 # Define helper function for printing results
 print_result() {
     if [ "$1" -eq 0 ]; then
-        printf "\e[32m✔️ SUCCESS\e[0m\n"
+        printf "✅ SUCCESS\n"
     else
-        printf "\e[31m❌ FAILURE\e[0m\n"
+        printf "❌ FAILURE\n"
     fi
 }
 

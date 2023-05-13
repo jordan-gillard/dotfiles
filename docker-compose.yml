@@ -13,12 +13,6 @@ services:
     volumes:
       - .:/workdir
 
-  centos:
-    image: centos:latest
-    command: /bin/bash -c "workdir/install.sh"
-    volumes:
-      - .:/workdir
-
   rhel:
     image: registry.access.redhat.com/ubi8/ubi:latest
     command: /bin/bash -c "workdir/install.sh"

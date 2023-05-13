@@ -9,10 +9,10 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     if command -v apt-get > /dev/null; then
         apt-get update
         apt-get install -y zsh
-    elif command -v yum > /dev/null; then
-        yum install -y zsh
     elif command -v dnf > /dev/null; then
         dnf install -y zsh
+    elif command -v yum > /dev/null; then
+        yum install -y zsh
     elif command -v pacman > /dev/null; then
         pacman -Syu --noconfirm zsh
     else
