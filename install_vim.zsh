@@ -22,9 +22,9 @@ if ! command -v vim &> /dev/null; then
             centos|rhel)
                 echo "Detected CentOS/RHEL-based distribution."
                 if [ "${VERSION_ID%%.*}" -ge "8" ]; then
-                    dnf -y install clang-format
+                    dnf -y install vim
                 else
-                    yum -y install clang-format
+                    yum -y install vim
                 fi
                 ;;
             fedora|rocky)

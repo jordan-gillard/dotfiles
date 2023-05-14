@@ -14,14 +14,16 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         centos|rhel)
             echo "Detected CentOS/RHEL-based distribution."
             if [ "${VERSION_ID%%.*}" -ge "8" ]; then
-                dnf -y install clang-format
+                subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
+                dnf -y install clang-tools-extra
             else
-                yum -y install clang-format
+                subscription-manager repos --enable=rhel-7-server-optional-rpms
+                yum -y install clang-tools-extra
             fi
             ;;
         fedora)
             echo "Detected Fedora-based distribution."
-            dnf -y install clang-format
+            dnf -y install clang-tools-extra
             ;;
         *)
             echo "Unsupported Linux distribution. Please install clang-format manually."

@@ -1,26 +1,32 @@
 version: "3.9"
 
 services:
-  ubuntu:
-    image: ubuntu:latest
+  linux_base: &linux_base
+    image: ubuntu:latest  # Always overwrite this value
     command: /bin/bash -c "workdir/install.sh & tail -f /dev/null"
     volumes:
       - .:/workdir
+
+  ubuntu:
+    <<: *linux_base
+    image: ubuntu:latest
 
   debian:
+    <<: *linux_base
     image: debian:latest
-    command: /bin/bash -c "workdir/install.sh & tail -f /dev/null"
-    volumes:
-      - .:/workdir
 
-  rhel:
+  rhel7:
+    <<: *linux_base
+    image: registry.access.redhat.com/ubi7/ubi:latest
+
+  rhel8:
+    <<: *linux_base
     image: registry.access.redhat.com/ubi8/ubi:latest
-    command: /bin/bash -c "workdir/install.sh & tail -f /dev/null"
-    volumes:
-      - .:/workdir
+
+  rhel9:
+    <<: *linux_base
+    image: registry.access.redhat.com/ubi9/ubi:latest
 
   fedora:
+    <<: *linux_base
     image: fedora:latest
-    command: /bin/bash -c "workdir/install.sh & tail -f /dev/null"
-    volumes:
-      - .:/workdir
