@@ -4,7 +4,7 @@ echo "Installing clang-format..."
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux installation
     echo "Detected OS: Linux"
-    . /etc/os-release
+    source /etc/os-release
     case $ID in
         ubuntu|debian)
             echo "Detected Ubuntu/Debian-based distribution."

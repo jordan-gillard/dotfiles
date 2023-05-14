@@ -3,7 +3,7 @@ version: "3.9"
 services:
   linux_base: &linux_base
     image: ubuntu:latest  # Always overwrite this value
-    command: /bin/bash -c "workdir/install.sh & tail -f /dev/null"
+    command: /bin/bash -c "workdir/install.new.sh && tail -f /dev/null"
     volumes:
       - .:/workdir
 
