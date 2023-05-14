@@ -12,11 +12,9 @@ echo "Detected OS: $os_pretty_name"
 
 package_manager=$(get_package_manager)
 if [ $? -eq 1 ]; then
-  echo "Failure: Unknown OS!"
+  echo "Failure: Can't determine package manager for $os_pretty_name!"
   exit 1
 fi
 
 echo "Using package manager: $package_manager"
-
-# Use the package manager to install packages
-#  > "$package_manager" install some_package
+update_package_manager $package_manager
