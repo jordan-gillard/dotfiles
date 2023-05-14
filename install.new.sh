@@ -4,11 +4,18 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
 # Source helper functions
-source "$SCRIPT_DIR/utils/index.sh"
+UTILS="$SCRIPT_DIR/utils/"
+
+for script_file in "$UTILS"/*.sh; do
+  # Check if the file exists and is a regular file
+  if [ -f "$script_file" ]; then
+    # Source the script file
+    source "$script_file"
+  fi
+done
 
 # Run main program
-os_pretty_name=$(get_os_pretty_name)
-echo "Detected OS: $os_pretty_name"
+echo "Detected OS: $get_os_pretty_name"
 
 package_manager=$(get_package_manager)
 if [ $? -eq 1 ]; then
@@ -16,5 +23,4 @@ if [ $? -eq 1 ]; then
   exit 1
 fi
 
-echo "Using package manager: $package_manager"
 update_package_manager $package_manager
